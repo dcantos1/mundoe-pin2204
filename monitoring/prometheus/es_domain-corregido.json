@@ -13,7 +13,7 @@
         "VolumeType": "gp2",
         "VolumeSize": 100
     },
-    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:us-east-2:113660933888:domain/eksworkshop-logging/*\"}]}",
+    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:us-east-1:257654204247:domain/eksworkshop-logging/*\"}]}",
     "SnapshotOptions": {},
     "CognitoOptions": {
         "Enabled": false
