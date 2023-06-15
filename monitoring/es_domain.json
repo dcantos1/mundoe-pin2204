@@ -1,8 +1,8 @@
 {
-    "DomainName": "eksworkshop-logging",
-    "ElasticsearchVersion": "7.4",
-    "ElasticsearchClusterConfig": {
-        "InstanceType": "r5.large.elasticsearch",
+    "DomainName": "${ES_DOMAIN_NAME}",
+    "EngineVersion": "${ES_VERSION}",
+    "ClusterConfig": {
+        "InstanceType": "r5.large.search",
         "InstanceCount": 1,
             "DedicatedMasterEnabled": false,
             "ZoneAwarenessEnabled": false,
@@ -13,7 +13,7 @@
         "VolumeType": "gp2",
         "VolumeSize": 100
     },
-    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:us-east-2:372044012221:domain/eksworkshop-logging/*\"}]}",
+    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:${AWS_REGION}:${ACCOUNT_ID}:domain/${ES_DOMAIN_NAME}/*\"}]}",
     "SnapshotOptions": {},
     "CognitoOptions": {
         "Enabled": false
@@ -32,8 +32,8 @@
         "Enabled": true,
         "InternalUserDatabaseEnabled": true,
         "MasterUserOptions": {
-            "MasterUserName": "eksworkshop",
-            "MasterUserPassword": "qxn9ZuNctjeaayDH_Ek1$"
+            "MasterUserName": "${ES_DOMAIN_USER}",
+            "MasterUserPassword": "${ES_DOMAIN_PASSWORD}"
         }
     }
 }
