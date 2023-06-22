@@ -79,7 +79,7 @@ data:
         Port            443
         TLS             On
         AWS_Auth        On
-        AWS_Region      us-east-2
+        AWS_Region      us-east-1
         Retry_Limit     6
 
   parsers.conf: |
