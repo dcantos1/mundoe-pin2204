@@ -1,5 +1,5 @@
 # We need to retrieve the Fluent Bit Role ARN
-export FLUENTBIT_ROLE=$(eksctl get iamserviceaccount --cluster mundose-eks-iFOhMCH6 --namespace logging -o json | jq '.[].status.roleARN' -r) 
+export FLUENTBIT_ROLE=$(eksctl get iamserviceaccount --cluster mundoe-eks --namespace logging -o json | jq '.[].status.roleARN' -r) 
 
 # Get the Elasticsearch Endpoint
 export ES_ENDPOINT=$(aws es describe-elasticsearch-domain --domain-name ${ES_DOMAIN_NAME} --output text --query "DomainStatus.Endpoint")
